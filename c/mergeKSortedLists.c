@@ -3,7 +3,7 @@
 #include <stdbool.h>
 
 typedef struct ListNode {
-    int val;
+    int val;                            
     struct ListNode* next;
 } ListNode;
 
@@ -25,17 +25,29 @@ Heap* initHeap(ListNode** elements, int maxSize);
 int isEmpty(Heap* h);
 void Heapify(Heap* h, int rootPos);
 int pop(Heap* h);
+ListNode* popNode(Heap* h);
 void printHeap(Heap* h);
 
 // General Utils
-void swap(ListNode* a, ListNode* b);
+void swap(ListNode** a, ListNode** b);
+
+ListNode* mergeKLists(ListNode** lists, int listsSize){
+    ListNode* dummy = createNode(-1);
+    ListNode* cur = dummy;
+    Heap* h = initHeap(lists, listsSize);
+    while (!isEmpty(h)) {
+        cur->next = popNode(h);
+        cur = cur->next;
+    }
+    return dummy->next;
+}
 
 int main() {
-    int arr[] = {9,8,7};
+    int arr[] = {1,3,7};
     int aSize = sizeof(arr)/sizeof(int);
-    int brr[] = {6,5,4};
+    int brr[] = {2,4,6};
     int bSize = sizeof(brr)/sizeof(int);
-    int crr[] = {3,2,1};
+    int crr[] = {3,8,9};
     int cSize = sizeof(crr)/sizeof(int);
     ListNode* a = createList(arr, aSize);
     printList(a);
@@ -46,8 +58,8 @@ int main() {
     ListNode** ele = (ListNode**)malloc(sizeof(ListNode*) * 3);
     ele[0] = a; ele[1] = b; ele[2] = c;
     int listSize = 3;
-    Heap* h = initHeap(ele, listSize);
-    printHeap(h);
+    ListNode* ret = mergeKLists(ele, listSize);
+    printList(ret);
     printf("testing\n");
 }
 
@@ -90,8 +102,8 @@ void freeList(ListNode* header) {
     header->next = NULL;
 }
 
-void swap(ListNode* a, ListNode* b) {
-    ListNode tmp = *a;
+void swap(ListNode** a, ListNode** b) {
+    ListNode* tmp = *a;
     *a = *b;
     *b = tmp;
 }
@@ -111,14 +123,14 @@ void Heapify(Heap* h, int rootPos) {
     int left = (2 * rootPos) + 1;
     int right = (2 * rootPos) + 2;
     int smallest = rootPos;
-    if (left <= h->curSize && h->elements[left]->val < h->elements[smallest]->val) {
+    if (left < h->curSize && h->elements[left]->val < h->elements[smallest]->val) {
         smallest = left;
     }
-    if (right <= h->curSize && h->elements[right]->val < h->elements[smallest]->val) {
+    if (right < h->curSize && h->elements[right]->val < h->elements[smallest]->val) {
         smallest = right;
     }
     if (smallest != rootPos) {
-        swap(h->elements[rootPos], h->elements[smallest]);
+        swap(&(h->elements[rootPos]), &(h->elements[smallest]));
         Heapify(h, smallest);
     }
 }
@@ -137,10 +149,25 @@ int pop(Heap* h) {
     h->elements[0] = h->elements[0]->next;
     free(tmp); // Pop out
     if (h->elements[0] == NULL) {
-        swap(h->elements[0], h->elements[--(h->curSize)]);
+        swap(&(h->elements[0]), &(h->elements[--(h->curSize)]));
     }
     Heapify(h, 0);
     return ret;
+}
+
+ListNode* popNode(Heap* h) {
+    if (isEmpty(h)) {
+        printf("The heap is empty!");
+        return NULL;
+    }
+    ListNode* tmp = h->elements[0];
+    int ret = tmp->val;
+    h->elements[0] = h->elements[0]->next;
+    if (h->elements[0] == NULL) {
+        swap(&(h->elements[0]), &(h->elements[--(h->curSize)]));
+    }
+    Heapify(h, 0);
+    return tmp;
 }
 
 void printHeap(Heap* h) {
