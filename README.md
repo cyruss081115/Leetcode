@@ -5,6 +5,7 @@ I currently use C and C++ for submissions.
 
 
 ### C
+---
 #### Solved
 [20. Valid Parentheses](c/validParentheses.c)  
 [21. Merge Two Sorted Lists](c/mergeKSortedLists.c)  
@@ -26,4 +27,24 @@ I currently use C and C++ for submissions.
 #### Attempted  
 [3. Longest Substring Without Repeating Characters](c/longestSubStr.c)  
 [23. Merge k Sorted Lists](c/mergeKSortedLists.c)  
+
+### C++
+---
+#### Data Structures Implemented
+[Trie](cpp/data_structures/trie.cpp) *In progress* 
+#### Solved 
+[1. Two Sum](cpp/twoSum.cpp)
+[12. Integer to Roman](cpp/romanNum.cpp)
+[44. Wildcard Matching](cpp/wildCard.cpp)
+[169. Majority Element](cpp/majority.cpp)
+[287. Find the Duplicate Number](cpp/findDupNumber.cpp)
+[347. Top K Frequent Elements](cpp/kFreqElement.cpp)
+[433. Minimum Genetic Mutation](cpp/minGenMutation.cpp)
+[692. Top K Frequent Words](cpp/kFreq.cpp)
+[766. Toeplitz Matrix](cpp/toeplitz.cpp)
+[1560. Most Visited Sector in a Circular Track](cpp/circulartrack.cpp)
+[1832. Check if the Sentence is Pangram](cpp/pangram.cpp)
+#### Attempted
+[1239. Maximum Length of a Concatenated String with Unique Characters](cpp/maxLenUniqueCharConcat.cpp)
+
 
