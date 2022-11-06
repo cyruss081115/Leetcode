@@ -42,6 +42,7 @@ I currently use C and C++ for submissions.
 [433. Minimum Genetic Mutation](cpp/minGenMutation.cpp)  
 [692. Top K Frequent Words](cpp/kFreq.cpp)  
 [766. Toeplitz Matrix](cpp/toeplitz.cpp)  
+[899. Orderly Queue](cpp/orderlyQ.cpp)
 [1560. Most Visited Sector in a Circular Track](cpp/circulartrack.cpp)  
 [1832. Check if the Sentence is Pangram](cpp/pangram.cpp)  
 [2131. Longest Palindrome by Concatenating Two Letter Words](cpp/longestPalindromeByConcat.cpp)  
