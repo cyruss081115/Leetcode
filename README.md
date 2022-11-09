@@ -43,6 +43,7 @@ I currently use C and C++ for submissions.
 [692. Top K Frequent Words](cpp/kFreq.cpp)  
 [766. Toeplitz Matrix](cpp/toeplitz.cpp)  
 [899. Orderly Queue](cpp/orderlyQ.cpp)
+[901. Online Stock Open](cpp/onlineStockSpan.cpp)
 [1544. Make the String Great](cpp/makeStringGreat.cpp)  
 [1560. Most Visited Sector in a Circular Track](cpp/circulartrack.cpp)  
 [1832. Check if the Sentence is Pangram](cpp/pangram.cpp)  
