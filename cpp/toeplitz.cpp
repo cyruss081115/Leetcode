@@ -14,7 +14,7 @@ public:
         
         for (int i = 0; i < n; i++) {
             prevElement = matrix[0][i];
-            for (int j = 0; j < m && i + j < n; j++) {
+            for (int j = 0; j < m && i + j < n; j++) { 
                 cout << "Checking i: " << i << " j: " << j << endl;
                 if (prevElement != matrix[j][i+j]) 
                     return false;
