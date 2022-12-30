@@ -48,6 +48,7 @@ I currently use C and C++ for submissions.
 [1560. Most Visited Sector in a Circular Track](cpp/circulartrack.cpp)  
 [1832. Check if the Sentence is Pangram](cpp/pangram.cpp)  
 [2131. Longest Palindrome by Concatenating Two Letter Words](cpp/longestPalindromeByConcat.cpp)  
+[2279. Maximum Bags With Full Capacity of Rocks](cpp/maxBagWithFullCapOfRocks.cpp)
 #### Attempted
 [1239. Maximum Length of a Concatenated String with Unique Characters](cpp/maxLenUniqueCharConcat.cpp)  
 
